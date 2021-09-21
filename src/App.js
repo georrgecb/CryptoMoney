@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout>
         <Navbar />
         <Layout>
           <Content style={{ padding: 30 }} className="content-block">
@@ -54,7 +54,7 @@ function App() {
               level={5}
               style={{ color: "white", textAlign: "center", marginBottom: 20 }}
             >
-              Made with 🔥 &nbsp;in Bucharest.
+              Made with 🔥 in Bucharest.
             </Typography.Title>
             <Space>
               <Link to="/">Home</Link>
