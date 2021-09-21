@@ -25,7 +25,7 @@ const Navbar = () => {
       collapsible
       collapsed={collapsed}
       onCollapse={onCollapse}
-      collapsedWidth={100}
+      collapsedWidth={60}
       width={250}
       theme="dark"
     >

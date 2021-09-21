@@ -46,13 +46,13 @@ function App() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              padding: 70,
+              padding: 50,
               background: "#151517",
             }}
           >
             <Typography.Title
               level={5}
-              style={{ color: "white", textAlign: "center" }}
+              style={{ color: "white", textAlign: "center", marginBottom: 20 }}
             >
               Made with 🔥 &nbsp;in Bucharest.
             </Typography.Title>

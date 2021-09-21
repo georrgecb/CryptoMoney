@@ -24,35 +24,35 @@ const Homepage = () => {
       </Typography.Title>
       <Card bordered={false}>
         <Row gutter={[30, 30]}>
-          <Col xs={12} lg={8}>
+          <Col xs={24} sm={12} lg={8}>
             <Statistic
               valueStyle={style}
               title="Total Coins"
               value={globalStats.total}
             />
           </Col>
-          <Col xs={12} lg={8}>
+          <Col xs={24} sm={12} lg={8}>
             <Statistic
               valueStyle={style}
               title="Total Exchanges"
               value={millify(globalStats.totalExchanges)}
             />
           </Col>
-          <Col xs={12} lg={8}>
+          <Col xs={24} sm={12} lg={8}>
             <Statistic
               valueStyle={style}
               title="Total Market Cap"
               value={`$${millify(globalStats.totalMarketCap)}`}
             />
           </Col>
-          <Col xs={12} lg={8}>
+          <Col xs={24} sm={12} lg={8}>
             <Statistic
               valueStyle={style}
               title="Total 24h Volume"
               value={`$${millify(globalStats.total24hVolume)}`}
             />
           </Col>
-          <Col xs={12} lg={8}>
+          <Col xs={24} sm={12} lg={8}>
             <Statistic
               valueStyle={style}
               title="Total Markets"
@@ -65,7 +65,7 @@ const Homepage = () => {
         <Typography.Title level={2} style={titleStyle}>
           Top 10 Coins
         </Typography.Title>
-        <Typography.Text strong style={{ fontSize: "1.3rem" }}>
+        <Typography.Text strong style={{ fontSize: "1rem" }}>
           <Link to="/cryptocurrencies">Show all</Link>
         </Typography.Text>
       </div>
@@ -74,7 +74,7 @@ const Homepage = () => {
         <Typography.Title level={2} style={titleStyle}>
           Latest news
         </Typography.Title>
-        <Typography.Text strong style={{ fontSize: "1.3rem" }}>
+        <Typography.Text strong style={{ fontSize: "1rem" }}>
           <Link to="/cryptocurrencies">Show all</Link>
         </Typography.Text>
       </div>
