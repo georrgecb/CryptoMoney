@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, Layout, Typography, Avatar } from "antd";
+import { Menu, Layout, Typography, Avatar, Grid } from "antd";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -17,23 +17,24 @@ const Navbar = () => {
   const { Sider } = Layout;
   const titleStyle = { color: "white", fontFamily: "'Patua One', cursive" };
   const dispatch = useDispatch();
+  const { useBreakpoint } = Grid;
 
-  const onCollapse = (collapsed) => {
-    setCollapsed(collapsed);
-    collapsed ? dispatch(setSize(60)) : dispatch(setSize(250));
-  };
+  const size = useBreakpoint();
 
   return (
     <Sider
-      collapsible
+      collapsible={!size.xs}
       collapsed={collapsed}
-      onCollapse={onCollapse}
+      onCollapse={(collapsed) => {
+        setCollapsed(collapsed);
+        collapsed ? dispatch(setSize(60)) : dispatch(setSize(250));
+      }}
       collapsedWidth={60}
       width={250}
       theme="dark"
       style={{
         overflow: "auto",
-        height: "100vh",
+        height: "100%",
         position: "fixed",
         left: 0,
       }}
@@ -58,7 +59,6 @@ const Navbar = () => {
       <Menu
         theme="dark"
         defaultSelectedKeys={["1"]}
-        mode="vertical"
         style={{ fontWeight: "bolder" }}
       >
         <Menu.Item key="1" icon={<HomeOutlined />}>

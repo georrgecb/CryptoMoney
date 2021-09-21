@@ -116,7 +116,7 @@ const CryptoDetails = () => {
         style={{ width: 250, margin: "40px 0" }}
       >
         {time.map((date, index) => (
-          <Option key={index}>{date}</Option>
+          <Option key={date}>{date}</Option>
         ))}
       </Select>
       <LineChart
