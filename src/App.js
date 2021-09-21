@@ -2,7 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 import "antd/dist/antd.css";
-
+import { useSelector } from "react-redux";
+import { selectSize } from "./slices/navSlice";
 import {
   Navbar,
   Exchanges,
@@ -14,13 +15,17 @@ import {
 
 function App() {
   const { Content, Footer } = Layout;
+  const sizeNav = useSelector(selectSize);
 
   return (
     <Router>
       <Layout>
         <Navbar />
-        <Layout>
-          <Content style={{ padding: 30 }} className="content-block">
+        <Layout style={{ marginLeft: sizeNav }}>
+          <Content
+            style={{ padding: 30, overflow: "initial" }}
+            className="content-block"
+          >
             <div style={{ marginTop: 10 }}>
               <Switch>
                 <Route exact path="/">
