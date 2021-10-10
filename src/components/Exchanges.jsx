@@ -3,7 +3,7 @@ import { Col, Row, Collapse, Typography, Image } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import millify from "millify";
 import Loader from "./Loader";
-import HTMLReactParser from "html-react-parser";
+import ReactHtmlParser from "react-html-parser";
 
 const Exchanges = () => {
   const { data, isFetching } = useGetCryptosQuery(100);
@@ -91,7 +91,7 @@ const Exchanges = () => {
             }
             key={index}
           >
-            <Text>{HTMLReactParser(coin.description)}</Text>
+            <Text>{ReactHtmlParser(coin.description)}</Text>
           </Panel>
         ))}
       </Collapse>
