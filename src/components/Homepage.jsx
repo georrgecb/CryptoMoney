@@ -6,7 +6,7 @@ import { Cryptocurrencies, News } from "../components";
 import Loader from "./Loader";
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
   const style = {
     fontSize: "2rem",

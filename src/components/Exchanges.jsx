@@ -6,8 +6,9 @@ import Loader from "./Loader";
 import ReactHtmlParser from "react-html-parser";
 
 const Exchanges = () => {
-  const { data, isFetching } = useGetCryptosQuery(100);
+  const { data, isFetching } = useGetCryptosQuery(50);
   const coins = data?.data?.coins;
+
   const { Panel } = Collapse;
   const { Title, Text } = Typography;
   const style = { fontSize: "1rem" };
@@ -91,7 +92,7 @@ const Exchanges = () => {
             }
             key={index}
           >
-            <Text>{ReactHtmlParser(coin.description)}</Text>
+            {/* <Text>{ReactHtmlParser(coin.description)}</Text> */}
           </Panel>
         ))}
       </Collapse>

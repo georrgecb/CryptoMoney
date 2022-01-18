@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HTMLReactParser from "html-react-parser";
+// import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
 import { Col, Row, Typography, Select } from "antd";
@@ -35,6 +35,7 @@ const CryptoDetails = () => {
     timeperiod,
   });
   const cryptoDetails = data?.data?.coin;
+  console.log(coinHistory);
 
   if (isFetching) return <Loader />;
 
@@ -49,7 +50,9 @@ const CryptoDetails = () => {
     { title: "Rank", value: cryptoDetails.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$${cryptoDetails.volume && millify(cryptoDetails.volume)}`,
+      value: `$${
+        cryptoDetails["24hVolume"] && millify(cryptoDetails["24hVolume"])
+      }`,
       icon: <ThunderboltOutlined />,
     },
     {
@@ -77,7 +80,7 @@ const CryptoDetails = () => {
     },
     {
       title: "Aprroved Supply",
-      value: cryptoDetails.approvedSupply ? (
+      value: cryptoDetails.supply.confirmed ? (
         <CheckOutlined />
       ) : (
         <StopOutlined />
@@ -86,12 +89,12 @@ const CryptoDetails = () => {
     },
     {
       title: "Total Supply",
-      value: `$${millify(cryptoDetails.totalSupply)}`,
+      value: `$${millify(cryptoDetails.supply.total)}`,
       icon: <ExclamationCircleOutlined />,
     },
     {
       title: "Circulating Supply",
-      value: `$${millify(cryptoDetails.circulatingSupply)}`,
+      value: `$${millify(cryptoDetails.supply.circulating)}`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
@@ -172,7 +175,7 @@ const CryptoDetails = () => {
           <Title level={3} className="coin-details-heading">
             What is {cryptoDetails.name}?
           </Title>
-          {HTMLReactParser(cryptoDetails.description)}
+          {/* {HTMLReactParser(cryptoDetails.description)} */}
         </Row>
         <Col className="coin-links">
           <Title level={3} className="coin-details-heading">
