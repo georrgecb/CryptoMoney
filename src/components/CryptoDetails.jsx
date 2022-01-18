@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import HTMLReactParser from "html-react-parser";
+import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
 import { Col, Row, Typography, Select } from "antd";
@@ -175,7 +175,7 @@ const CryptoDetails = () => {
           <Title level={3} className="coin-details-heading">
             What is {cryptoDetails.name}?
           </Title>
-          {/* {HTMLReactParser(cryptoDetails.description)} */}
+          {HTMLReactParser(cryptoDetails.description)}
         </Row>
         <Col className="coin-links">
           <Title level={3} className="coin-details-heading">
