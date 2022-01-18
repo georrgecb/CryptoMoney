@@ -3,7 +3,7 @@ import { Col, Row, Collapse, Typography, Image } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import millify from "millify";
 import Loader from "./Loader";
-import ReactHtmlParser from "react-html-parser";
+// import ReactHtmlParser from "react-html-parser";
 
 const Exchanges = () => {
   const { data, isFetching } = useGetCryptosQuery(50);
